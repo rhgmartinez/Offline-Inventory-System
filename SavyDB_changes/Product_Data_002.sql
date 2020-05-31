@@ -1,0 +1,1 @@
+UPDATE Products SET productQty = 0, deliveredQty = 0
