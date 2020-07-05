@@ -1,0 +1,74 @@
+Data Source=DESKTOP-EFOV730;Initial Catalog=SavyPOS_DB;User ID=sa;Password=admin1234
+
+
+Data Source=DESKTOP-EFOV730;Initial Catalog=SavyPOS_DB;User ID=sa;Password=admin1234
+
+
+Provider=SQLOLEDB.1;Data Source=DESKTOP-EFOV730;Persist Security Info=True;Password=admin1234;User ID=sa;Initial Catalog=SavyPOS_DB
+
+
+
+server=DESKTOP-EFOV730;database=SavyPOS_DB;Integrated Security=True;user id=sa; password=admin1234
+
+
+server=ASUS-PC\\MSSQL;database=SavyPOS_DB;Integrated Security=True;user id=sa; password=sql
+
+
+server=DESKTOP-5H5HFRH;database=SavyPOS_DB;Integrated Security=True;user id=sa_mlabio; password=mlabioadmin
+
+server=RHGMARTINEZ-PC\\MSSQL;database=SavyPOS_DB;Integrated Security=True;user id=sa; password=sql
+
+
+<connectionStrings>
+        <add name="Savy_App.Properties.Settings.SavyPOS_DBConnectionString"
+            connectionString="Data Source=RHGMARTINEZ-PC\MSSQL;Initial Catalog=SavyPOS_DB;User ID=sa;Password=sql"
+            providerName="System.Data.SqlClient" />
+        <add name="Savy_App.Properties.Settings.SavyDBConnectionString"
+            connectionString="Data Source=RHGMARTINEZ-PC\MSSQL;Initial Catalog=SavyPOS_DB;User ID=sa;Password=sql"
+            providerName="System.Data.SqlClient" />
+        <add name="Savy_App.Properties.Settings.SQLConnectionString"
+            connectionString="Provider=SQLOLEDB.1;Data Source=RHGMARTINEZ-PC\MSSQL;Persist Security Info=True;Password=sql;User ID=sa;Initial Catalog=SavyPOS_DB"
+            providerName="System.Data.OleDb" />
+    </connectionStrings>
+
+
+
+<connectionStrings>
+        <add name="Savy_App.Properties.Settings.SavyPOS_DBConnectionString"
+            connectionString="Data Source=ASUS-PC\MSSQL;Initial Catalog=SavyPOS_DB;User ID=sa;Password=sql"
+            providerName="System.Data.SqlClient" />
+        <add name="Savy_App.Properties.Settings.SavyDBConnectionString"
+            connectionString="Data Source=ASUS-PC\MSSQL;Initial Catalog=SavyPOS_DB;User ID=sa;Password=sql"
+            providerName="System.Data.SqlClient" />
+        <add name="Savy_App.Properties.Settings.SQLConnectionString"
+            connectionString="Provider=SQLOLEDB.1;Data Source=ASUS-PC\MSSQL;Persist Security Info=True;Password=sql;User ID=sa;Initial Catalog=SavyPOS_DB"
+            providerName="System.Data.OleDb" />
+    </connectionStrings>
+
+
+
+
+<add name="Savy_App.Properties.Settings.SavyPOS_DBConnectionString"
+            connectionString="Data Source=DESKTOP-EFOV730;Initial Catalog=SavyPOS_DB;User ID=sa;Password=admin1234"
+            providerName="System.Data.SqlClient" />
+        <add name="Savy_App.Properties.Settings.SavyDBConnectionString"
+            connectionString="Data Source=DESKTOP-EFOV730;Initial Catalog=SavyPOS_DB;User ID=sa;Password=admin1234"
+            providerName="System.Data.SqlClient" />
+        <add name="Savy_App.Properties.Settings.SQLConnectionString"
+            connectionString="Provider=SQLOLEDB.1;Data Source=DESKTOP-EFOV730;Persist Security Info=True;Password=admin1234;User ID=sa;Initial Catalog=SavyPOS_DB"
+            providerName="System.Data.OleDb" />
+
+
+
+
+
+
+<add name="Savy_App.Properties.Settings.SavyPOS_DBConnectionString"
+            connectionString="Data Source=DESKTOP-5H5HFRH;Initial Catalog=SavyPOS_DB;User ID=sa_mlabio;Password=mlabioadmin"
+            providerName="System.Data.SqlClient" />
+        <add name="Savy_App.Properties.Settings.SavyDBConnectionString"
+            connectionString="Data Source=DESKTOP-5H5HFRH;Initial Catalog=SavyPOS_DB;User ID=sa_mlabio;Password=mlabioadmin"
+            providerName="System.Data.SqlClient" />
+        <add name="Savy_App.Properties.Settings.SQLConnectionString"
+            connectionString="Provider=SQLOLEDB.1;Data Source=DESKTOP-5H5HFRH;Persist Security Info=True;Password=mlabioadmin;User ID=sa_mlabio;Initial Catalog=SavyPOS_DB"
+            providerName="System.Data.OleDb" />

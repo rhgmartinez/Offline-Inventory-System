@@ -318,6 +318,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(72, 23);
             this.textBox1.TabIndex = 453;
+            this.textBox1.Visible = false;
             // 
             // panel2
             // 

@@ -26,8 +26,8 @@ namespace Savy_App.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EFOV730;Initial Catalog=SavyPOS_DB;User ID=sa;Password=admin1" +
-            "234")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=RHGMARTINEZ-PC\\MSSQL;Initial Catalog=SavyPOS_DB2;User ID=sa;Password=" +
+            "sql")]
         public string SavyPOS_DBConnectionString {
             get {
                 return ((string)(this["SavyPOS_DBConnectionString"]));
@@ -37,8 +37,8 @@ namespace Savy_App.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EFOV730;Initial Catalog=SavyPOS_DB;User ID=sa;Password=admin1" +
-            "234")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=RHGMARTINEZ-PC\\MSSQL;Initial Catalog=SavyPOS_DB2;User ID=sa;Password=" +
+            "sql")]
         public string SavyDBConnectionString {
             get {
                 return ((string)(this["SavyDBConnectionString"]));
@@ -48,8 +48,8 @@ namespace Savy_App.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("\nProvider=SQLOLEDB.1;Data Source=DESKTOP-EFOV730;Persist Security Info=True;Passw" +
-            "ord=admin1234;User ID=sa;Initial Catalog=SavyPOS_DB")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLOLEDB.1;Data Source=RHGMARTINEZ-PC\\MSSQL;Persist Security Info=True;P" +
+            "assword=sql;User ID=sa;Initial Catalog=SavyPOS_DB2")]
         public string SQLConnectionString {
             get {
                 return ((string)(this["SQLConnectionString"]));

@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\OfflineInventory-system-repo\2020\xav 3.0\</PublishUrl>
+    <PublishUrl>D:\Offline Inventory System - Savy\Savy_App_July42020\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>24</ApplicationRevision>
-    <ApplicationVersion>8.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationVersion>10.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -180,6 +180,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>POS_DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProductStockBalance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductStockBalance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Product_Detail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SavyPOS_DBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SavyPOS_FinalDBJune2020.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SavyPOS_FinalDBJune2020.xsd</DependentUpon>
     </Compile>
     <Compile Include="ViewTransactions.cs">
       <SubType>Form</SubType>
@@ -307,6 +318,10 @@
     <EmbeddedResource Include="PaymentReceipt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PaymentReceipt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductStockBalance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProductStockBalance.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Product_Detail.resx">
       <DependentUpon>Product_Detail.cs</DependentUpon>
@@ -394,6 +409,17 @@
     </EmbeddedResource>
     <None Include="SavyPOS_DBFinalDataSet.xss">
       <DependentUpon>SavyPOS_DBFinalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SavyPOS_FinalDBJune2020.xsc">
+      <DependentUpon>SavyPOS_FinalDBJune2020.xsd</DependentUpon>
+    </None>
+    <None Include="SavyPOS_FinalDBJune2020.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SavyPOS_FinalDBJune2020.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SavyPOS_FinalDBJune2020.xss">
+      <DependentUpon>SavyPOS_FinalDBJune2020.xsd</DependentUpon>
     </None>
     <None Include="Savy_App_TemporaryKey.pfx" />
   </ItemGroup>

@@ -5,28 +5,26 @@
     <Setting Name="SavyPOS_DBConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=DESKTOP-EFOV730;Initial Catalog=SavyPOS_DB;User ID=sa;Password=admin1234&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=RHGMARTINEZ-PC\MSSQL;Initial Catalog=SavyPOS_DB2;User ID=sa;Password=sql&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-EFOV730;Initial Catalog=SavyPOS_DB;User ID=sa;Password=admin1234</Value>
+      <Value Profile="(Default)">Data Source=RHGMARTINEZ-PC\MSSQL;Initial Catalog=SavyPOS_DB2;User ID=sa;Password=sql</Value>
     </Setting>
     <Setting Name="SavyDBConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=DESKTOP-EFOV730;Initial Catalog=SavyPOS_DB;User ID=sa;Password=admin1234&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=RHGMARTINEZ-PC\MSSQL;Initial Catalog=SavyPOS_DB2;User ID=sa;Password=sql&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=DESKTOP-EFOV730;Initial Catalog=SavyPOS_DB;User ID=sa;Password=admin1234</Value>
+      <Value Profile="(Default)">Data Source=RHGMARTINEZ-PC\MSSQL;Initial Catalog=SavyPOS_DB2;User ID=sa;Password=sql</Value>
     </Setting>
     <Setting Name="SQLConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;
-Provider=SQLOLEDB.1;Data Source=DESKTOP-EFOV730;Persist Security Info=True;Password=admin1234;User ID=sa;Initial Catalog=SavyPOS_DB&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Provider=SQLOLEDB.1;Data Source=RHGMARTINEZ-PC\MSSQL;Persist Security Info=True;Password=sql;User ID=sa;Initial Catalog=SavyPOS_DB2&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">
-Provider=SQLOLEDB.1;Data Source=DESKTOP-EFOV730;Persist Security Info=True;Password=admin1234;User ID=sa;Initial Catalog=SavyPOS_DB</Value>
+      <Value Profile="(Default)">Provider=SQLOLEDB.1;Data Source=RHGMARTINEZ-PC\MSSQL;Persist Security Info=True;Password=sql;User ID=sa;Initial Catalog=SavyPOS_DB2</Value>
     </Setting>
   </Settings>
 </SettingsFile>

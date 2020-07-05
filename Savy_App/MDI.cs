@@ -16,7 +16,7 @@ namespace Savy_App
         Brand_List brand;
         Product_List product;
         Supplier_List supplier;
-        Transaction transaction;
+        Payment transaction;
         ViewTransactions record;
         Reports rep;
         public MDI()
@@ -91,7 +91,7 @@ namespace Savy_App
             //product.Close();
             //supplier.Close();
             //transaction.Close();
-            transaction = new Transaction();
+            transaction = new Payment();
             transaction.MdiParent = this;
             transaction.Show();
         }

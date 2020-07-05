@@ -14,7 +14,7 @@ namespace Savy_App
         private DataTable dataTable = new DataTable();
         public SQL()
         {
-            con = new SqlConnection("server=DESKTOP-EFOV730;database=SavyPOS_DB;Integrated Security=True;user id=sa; password=admin1234");
+            con = new SqlConnection("server=RHGMARTINEZ-PC\\MSSQL;database=SavyPOS_DB2;Integrated Security=True;user id=sa; password=sql");
         }
         //Close the connection to avoid timeout error which would result to system-paused since the connection is already open.
         public void close()

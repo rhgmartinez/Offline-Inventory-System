@@ -154,7 +154,7 @@ namespace Savy_App
                                                 "       [qtyReturned]," +
                                                 "       [CREATE_DATE]," +
                                                 "       [totalAmount]" +
-                                                "  FROM [SavyPOS_DB].[dbo].[Sales]" +
+                                                "  FROM Sales" +
                                                " WHERE [CREATE_DATE] >= '" + sDate + "'" +
                                                " AND [CREATE_DATE] <= '" + eDate + "' ORDER BY [CREATE_DATE] DESC, [brandName] ASC, [productName] ASC";
 
@@ -165,6 +165,28 @@ namespace Savy_App
                     DataTable dt = ds.Tables["Sales"];
 
                     r.SetDataSource(ds.Tables["Sales"]);
+                    crv_1.ReportSource = r;
+                    crv_1.Refresh();
+                }
+                else if (cmb_brand.Text == "Product Stock Balance")
+                {
+                    ProductStockBalance r = new ProductStockBalance();
+                    Record.con.ConnectionString = ConfigurationManager.ConnectionStrings["Savy_App.Properties.Settings.SavyPOS_DBConnectionString"].ToString();
+                    string select_statement = "SELECT [productId]," +
+                                                "       [productName]," +
+                                                "       [productPrice]," +
+                                                "       [productQty]," +
+                                                "       [productStockBalanceWithCurrency]," +
+                                                "       [productStockBalance]" +
+                                                " FROM ProductStockBalance";
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter adp = new SqlDataAdapter(select_statement, Record.con);
+
+                    adp.Fill(ds, "ProductStockBalance");
+                    DataTable dt = ds.Tables["ProductStockBalance"];
+
+                    r.SetDataSource(ds.Tables["ProductStockBalance"]);
                     crv_1.ReportSource = r;
                     crv_1.Refresh();
                 }

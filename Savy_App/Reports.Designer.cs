@@ -51,10 +51,8 @@
             this.crv_1.ShowCloseButton = false;
             this.crv_1.ShowCopyButton = false;
             this.crv_1.ShowExportButton = false;
-            this.crv_1.ShowGotoPageButton = false;
             this.crv_1.ShowGroupTreeButton = false;
             this.crv_1.ShowLogo = false;
-            this.crv_1.ShowPageNavigateButtons = false;
             this.crv_1.ShowParameterPanelButton = false;
             this.crv_1.ShowTextSearchButton = false;
             this.crv_1.ShowZoomButton = false;
@@ -110,7 +108,8 @@
             "Inventory",
             "Invoice",
             "Delivery",
-            "Sales"});
+            "Sales",
+            "Product Stock Balance"});
             this.cmb_brand.Location = new System.Drawing.Point(133, 50);
             this.cmb_brand.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_brand.Name = "cmb_brand";
