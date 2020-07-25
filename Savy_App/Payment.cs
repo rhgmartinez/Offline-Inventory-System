@@ -382,6 +382,16 @@ namespace Savy_App
             }
         }
 
+        public void clearFields2()
+        {
+            txt_product.Text = "";
+            txt_price.Text = "";
+            txt_qty.Text = "";
+            txt_discount.Text = "";
+            txt_stock.Text = "";
+            lbl_product_id = "";
+            textBox1.Text = "";
+        }
         private void btn_add_Click(object sender, EventArgs e)
         {
             string discount_type_word = "None";
@@ -415,12 +425,10 @@ namespace Savy_App
                         dt3.Rows.Add(txt_product.Text, txt_price.Text, txt_stock.Text, txt_qty.Text, discount_type_word, txt_discount.Text, textBox1.Text, discount_type);
                         if (discount_type == 0)
                         {
-                            discount_type_word = "₱";
                             total_amount += ((float.Parse(txt_price.Text) * Convert.ToInt32(txt_qty.Text)) - float.Parse(txt_discount.Text));
                         }
                         else if (discount_type == 1)
                         {
-                            discount_type_word = "%";
                             total_amount += (float.Parse(txt_price.Text) * Convert.ToInt32(txt_qty.Text)) - ((float.Parse(txt_discount.Text)/100)*float.Parse(txt_price.Text));
                         }
 
@@ -434,7 +442,7 @@ namespace Savy_App
                         //    rowIndex = -1;
                         //    MessageBox.Show("Product already exists in your cart.");
                         //}
-                        clearFields();
+                        clearFields2();
                     }
                     else if (radioButton1.Checked == true)
                     {
@@ -461,7 +469,7 @@ namespace Savy_App
                         //{
                         //    MessageBox.Show("Product already exists in your cart.");
                         //}
-                        clearFields();
+                        clearFields2();
 
                     }
                     lbl_totalamount.Text = total_amount.ToString();
@@ -651,21 +659,24 @@ namespace Savy_App
                 int i = e.RowIndex;//get the Row Index             
                 DataGridViewRow row = dtg_cart.Rows[i];
 
-                lbl_cart_id = row.Cells[0].Value.ToString();
+                lbl_cart_id = row.Cells[6].Value.ToString();
+                textBox1.Text = row.Cells[6].Value.ToString();
+                clearFields();
+                //if (lbl_cart_id != "")
+                //{
+                //    Record = new SQL();
+                //    dt1 = new DataTable();
 
-                if (lbl_cart_id != "")
-                {
-                    Record = new SQL();
-                    dt1 = new DataTable();
-                    //dt = Record.SELECT_STATEMENT("SELECT * FROM Products where productId = " + Convert.ToInt32(lbl_product_id));
-                    //txt_product.Text = dt.Rows[0]["productName"].ToString();
-                    //txt_stock.Text = dt.Rows[0]["productQty"].ToString();
-                    //txt_price.Text = dt.Rows[0]["productPrice"].ToString();
-                }
-                else
-                {
-                    clearFields();
-                }
+                //    clearFields();
+                //    //dt = Record.SELECT_STATEMENT("SELECT * FROM Products where productId = " + Convert.ToInt32(lbl_product_id));
+                //    //txt_product.Text = dt.Rows[0]["productName"].ToString();
+                //    //txt_stock.Text = dt.Rows[0]["productQty"].ToString();
+                //    //txt_price.Text = dt.Rows[0]["productPrice"].ToString();
+                //}
+                //else
+                //{
+                //    clearFields();
+                //}
 
             }
             else
@@ -742,6 +753,47 @@ namespace Savy_App
                     txt_stock.Text = dt1.Rows[0]["productQty"].ToString();
                     txt_price.Text = dt1.Rows[0]["productPrice"].ToString();
                 }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (lbl_cart_id != "")
+            {
+                foreach (DataGridViewRow row in this.dtg_cart.Rows)
+                {
+                    if (row.Cells[6].Value.ToString().Equals(textBox1.Text))
+                    {
+                        string p = row.Cells[1].Value.ToString();
+                        string d = row.Cells[5].Value.ToString();
+                        string q = row.Cells[3].Value.ToString();
+                        string discount_type_word = row.Cells[4].Value.ToString();
+                        float amount_to_remove = 0;
+                        if (discount_type_word == "₱")
+                        {
+                            amount_to_remove = ((float.Parse(p) * Convert.ToInt32(q)) - float.Parse(d));
+                        }
+                        else if (discount_type_word == "%")
+                        {
+                            amount_to_remove = (float.Parse(p) * Convert.ToInt32(q)) - ((float.Parse(d) / 100) * float.Parse(p));
+                        }
+                        else
+                        {
+                            amount_to_remove = (float.Parse(p) * Convert.ToInt32(q));
+                        }
+                        total_amount = total_amount - amount_to_remove;
+
+                        rowIndex = row.Index;
+                        this.dt3.Rows.RemoveAt(rowIndex);
+                    }
+                    lbl_totalamount.Text = total_amount.ToString();
+                    count = count - 1;
+                    clearFields2();
+                }
+            }
+            else
+            {
+                 MessageBox.Show("Select a product from the cart.");
             }
         }
     }

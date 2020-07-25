@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Payment));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.crv_1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_change = new System.Windows.Forms.TextBox();
@@ -81,6 +81,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.dtg_cart = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txt_id_selected_from_cart = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -552,14 +554,14 @@
             this.dtg_products.AllowUserToOrderColumns = true;
             this.dtg_products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_products.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtg_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_products.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dtg_products.Location = new System.Drawing.Point(124, 58);
@@ -665,6 +667,7 @@
             // 
             this.panel4.BackgroundImage = global::Savy_App.Properties.Resources._290x530_detail;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Controls.Add(this.button3);
             this.panel4.Controls.Add(this.lbl_totalamount);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.button1);
@@ -709,11 +712,11 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 210);
+            this.button1.Location = new System.Drawing.Point(146, 210);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(261, 40);
+            this.button1.Size = new System.Drawing.Size(138, 40);
             this.button1.TabIndex = 455;
-            this.button1.Text = "Clear";
+            this.button1.Text = "Clear Cart";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -728,9 +731,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(273, 210);
+            this.button2.Location = new System.Drawing.Point(289, 210);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(261, 40);
+            this.button2.Size = new System.Drawing.Size(245, 40);
             this.button2.TabIndex = 454;
             this.button2.Text = "Proceed to Payment";
             this.button2.UseVisualStyleBackColor = false;
@@ -755,14 +758,14 @@
             this.dtg_cart.AllowUserToOrderColumns = true;
             this.dtg_cart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_cart.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_cart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_cart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtg_cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_cart.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dtg_cart.Location = new System.Drawing.Point(3, 25);
@@ -773,6 +776,37 @@
             this.dtg_cart.TabIndex = 378;
             this.dtg_cart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_cart_CellClick);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.ForestGreen;
+            this.button3.BackgroundImage = global::Savy_App.Properties.Resources._200x40_red;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LimeGreen;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(3, 210);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(138, 40);
+            this.button3.TabIndex = 465;
+            this.button3.Text = "Remove Product";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txt_id_selected_from_cart
+            // 
+            this.txt_id_selected_from_cart.Enabled = false;
+            this.txt_id_selected_from_cart.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id_selected_from_cart.ForeColor = System.Drawing.Color.Black;
+            this.txt_id_selected_from_cart.Location = new System.Drawing.Point(184, 11);
+            this.txt_id_selected_from_cart.Multiline = true;
+            this.txt_id_selected_from_cart.Name = "txt_id_selected_from_cart";
+            this.txt_id_selected_from_cart.Size = new System.Drawing.Size(72, 23);
+            this.txt_id_selected_from_cart.TabIndex = 465;
+            this.txt_id_selected_from_cart.Visible = false;
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -780,6 +814,7 @@
             this.BackgroundImage = global::Savy_App.Properties.Resources._900x635;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(900, 635);
+            this.Controls.Add(this.txt_id_selected_from_cart);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.textBox1);
@@ -863,5 +898,7 @@
         public System.Windows.Forms.Button button2;
         public System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView dtg_cart;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.TextBox txt_id_selected_from_cart;
     }
 }

@@ -27,9 +27,6 @@ namespace Savy_App
 
         private void MDI_Load(object sender, EventArgs e)
         {
-            //dash = new Dashboard();
-            //dash.MdiParent = this;
-            //dash.Show();
         }
 
         private void menu_logout_Click(object sender, EventArgs e)
@@ -39,11 +36,6 @@ namespace Savy_App
 
         private void menu_brands_Click(object sender, EventArgs e)
         {
-            //dash.Close();
-            //brand.Close();
-            //product.Close();
-            //supplier.Close();
-            //transaction.Close();
             brand = new Brand_List();
             brand.MdiParent = this;
             brand.Show();
@@ -51,11 +43,6 @@ namespace Savy_App
 
         private void menu_products_Click(object sender, EventArgs e)
         {
-            //dash.Close();
-            //brand.Close();
-            //product.Close();
-            //supplier.Close();
-            //transaction.Close();
             product = new Product_List();
             product.MdiParent = this;
             product.Show();
@@ -63,11 +50,6 @@ namespace Savy_App
 
         private void menu_suppliers_Click(object sender, EventArgs e)
         {
-            //dash.Close();
-            //brand.Close();
-            //product.Close();
-            //supplier.Close();
-            //transaction.Close();
             supplier = new Supplier_List();
             supplier.MdiParent = this;
             supplier.Show();
@@ -75,22 +57,12 @@ namespace Savy_App
 
         private void menu_dashboard_Click(object sender, EventArgs e)
         {
-            //dash.Close();
-            //brand.Close();
-            //product.Close();
-            //supplier.Close();
-            //transaction.Close();
             dash = new Dashboard();
             dash.MdiParent = this;
         }
 
         private void menu_orders_Click_1(object sender, EventArgs e)
         {
-            //dash.Close();
-            //brand.Close();
-            //product.Close();
-            //supplier.Close();
-            //transaction.Close();
             transaction = new Payment();
             transaction.MdiParent = this;
             transaction.Show();
