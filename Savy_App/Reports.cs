@@ -178,7 +178,8 @@ namespace Savy_App
                                                 "       [productQty]," +
                                                 "       [productStockBalanceWithCurrency]," +
                                                 "       [productStockBalance]" +
-                                                " FROM ProductStockBalance";
+                                                " FROM ProductStockBalance" +
+                                                " ORDER BY [productName], [productStockBalance]";
 
                     DataSet ds = new DataSet();
                     SqlDataAdapter adp = new SqlDataAdapter(select_statement, Record.con);
