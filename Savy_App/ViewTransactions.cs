@@ -35,17 +35,18 @@ namespace Savy_App
         {
             Record = new SQL();
             dt = new DataTable();
-            dt = Record.SELECT_STATEMENT("SELECT * FROM Transactions WHERE isDeleted<>1");
+            dt = Record.SELECT_STATEMENT("SELECT REPLICATE('0',6-LEN(RTRIM(p.paymentId))) + RTRIM(p.paymentId) AS paymentId, t.transactionId, t.transactionDate, t.isDeleted, t.totalAmount, t.isPaid, p.CREATE_DATE, p.LAST_UPDATE_DATE FROM Transactions t JOIN Payment p ON t.transactionId = p.transactionId WHERE t.isDeleted <> 1");
 
             dataGridView2.DataSource = dt;
 
             dataGridView2.Columns[0].HeaderText = "Receipt Number";
-            dataGridView2.Columns[1].HeaderText = "Date";
-            dataGridView2.Columns[2].Visible = false;
-            dataGridView2.Columns[3].HeaderText = "Total Amount";
-            dataGridView2.Columns[4].Visible = false;
+            dataGridView2.Columns[1].Visible = false;
+            dataGridView2.Columns[2].HeaderText = "Date";
+            dataGridView2.Columns[3].Visible = false;
+            dataGridView2.Columns[4].HeaderText = "Total Amount";
             dataGridView2.Columns[5].Visible = false;
             dataGridView2.Columns[6].Visible = false;
+            dataGridView2.Columns[7].Visible = false;
 
             if(dt.Rows.Count > 0){
                 label1.Text = dt.Rows[0]["transactionId"].ToString();
@@ -70,11 +71,11 @@ namespace Savy_App
                 int i = e.RowIndex;//get the Row Index             
                 DataGridViewRow row = dataGridView2.Rows[i];
 
-                label1.Text = dt.Rows[i]["transactionId"].ToString();
+                label1.Text = row.Cells[0].Value.ToString(); //dt.Rows[i]["transactionId"].ToString();
 
                 Record2 = new SQL();
                 dt2 = new DataTable();
-                dt2 = Record2.SELECT_STATEMENT("SELECT * FROM TransactionProducts WHERE (qtyReturned IS NULL OR (qtyReturned IS NOT NULL AND qtyReturned < quantity)) AND transactionId = " + Convert.ToInt32(label1.Text));
+                dt2 = Record2.SELECT_STATEMENT("SELECT tp.* FROM TransactionProducts tp JOIN Payment p ON tp.transactionId = p.transactionId WHERE (tp.qtyReturned IS NULL OR (tp.qtyReturned IS NOT NULL AND tp.qtyReturned < tp.quantity)) AND paymentId = " + Convert.ToInt32(label1.Text));
                 if (dt2.Rows.Count > 0)
                 {
                     button2.Visible = true;
@@ -95,7 +96,7 @@ namespace Savy_App
             if (txt_search.Text != "")
             {
                 DataView dv = new DataView(dt);
-                dv.RowFilter = string.Format("transactionId = {0}", Convert.ToInt32(txt_search.Text));
+                dv.RowFilter = string.Format("paymentId = {0}", Convert.ToInt32(txt_search.Text));
                 dataGridView2.DataSource = dv;
             }
             else
@@ -173,10 +174,10 @@ namespace Savy_App
                                     "N'₱ '+ CONVERT(VARCHAR,[amountPaid]) AS amountPaid, " +
                                     "N'₱ '+ CONVERT(VARCHAR,[change]) AS change, " +
                                     "[CREATE_DATE], " +
-                                    "[paymentId], " +
+                                    "REPLICATE('0',6-LEN(RTRIM([paymentId]))) + RTRIM([paymentId]) AS paymentId, " +
                                     "[transactionId] " +
                                     "FROM [SavyPOS_DB].[dbo].[Invoice] " +
-                                    "WHERE transactionId = " + Convert.ToInt32(label1.Text);
+                                    "WHERE paymentId = " + Convert.ToInt32(label1.Text);
 
             DataSet ds = new DataSet();
             SqlDataAdapter adp = new SqlDataAdapter(select_statement, Record.con);
@@ -207,7 +208,7 @@ namespace Savy_App
                                     "N'₱ '+ CONVERT(VARCHAR,[amountPaid]) AS amountPaid, " +
                                     "N'₱ '+ CONVERT(VARCHAR,[change]) AS change, " +
                                     "[CREATE_DATE], " +
-                                    "[paymentId], " +
+                                    "REPLICATE('0',6-LEN(RTRIM([paymentId]))) + RTRIM([paymentId]) AS paymentId, " +
                                     "[transactionId] " +
                                     "FROM [SavyPOS_DB].[dbo].[Invoice] " +
                                     "WHERE transactionId = " + Convert.ToInt32(label1.Text);
@@ -241,7 +242,7 @@ namespace Savy_App
                                     "N'₱ '+ CONVERT(VARCHAR,[amountPaid]) AS amountPaid, " +
                                     "N'₱ '+ CONVERT(VARCHAR,[change]) AS change, " +
                                     "[CREATE_DATE], " +
-                                    "[paymentId], " +
+                                    "REPLICATE('0',6-LEN(RTRIM([paymentId]))) + RTRIM([paymentId]) AS paymentId, " +
                                     "[transactionId] " +
                                     "FROM [SavyPOS_DB].[dbo].[Invoice] ";
 

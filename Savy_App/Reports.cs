@@ -38,8 +38,8 @@ namespace Savy_App
         private void button3_Click(object sender, EventArgs e)
         {
             Record = new SQL();
-            string sDate = dtp_sdate.Value.ToShortDateString();
-            string eDate = dtp_edate.Value.ToShortDateString();
+            string sDate = dtp_sdate.Value.ToString("MM-dd-yyyy");
+            string eDate = dtp_edate.Value.ToString("MM-dd-yyyy");
             if(cmb_brand.Text == ""){
 
             }
@@ -63,7 +63,7 @@ namespace Savy_App
                                             "N'₱ '+ CONVERT(VARCHAR,[amountPaid]) AS amountPaid, " +
                                             "N'₱ '+ CONVERT(VARCHAR,[change]) AS change, " +
                                             "[CREATE_DATE], " +
-                                            "[paymentId], " +
+                                            "REPLICATE('0',6-LEN(RTRIM([paymentId]))) + RTRIM([paymentId]) AS paymentId, " +
                                             "[transactionId] " +
                                             "FROM [SavyPOS_DB].[dbo].[Invoice] " +
                                             " WHERE CREATE_DATE >= '" + sDate + "'" +
@@ -95,8 +95,8 @@ namespace Savy_App
                                                " Convert(VARCHAR, LAST_UPDATE_DATE,  101) AS LAST_UPDATE_DATE," +
                                                " Convert(VARCHAR, CREATE_DATE,  101) AS CREATE_DATE" +
                                                " FROM Inventory" +
-                                               " WHERE CREATE_DATE >= '" + sDate +"'" +
-                                               " AND CREATE_DATE <= '" + eDate + "' ORDER BY CREATE_DATE DESC, brandName ASC, productName ASC";
+                                               " WHERE CONVERT(DATE,LAST_UPDATE_DATE) >= CONVERT(DATE,'" + sDate + "')" +
+                                               " AND CONVERT(DATE,LAST_UPDATE_DATE) <= CONVERT(DATE,'" + eDate + "') ORDER BY LAST_UPDATE_DATE DESC, brandName ASC, productName ASC";
 
                     DataSet ds = new DataSet();
                     SqlDataAdapter adp = new SqlDataAdapter(select_statement, Record.con);
@@ -144,8 +144,8 @@ namespace Savy_App
                 {
                     Sales r = new Sales();
                     Record.con.ConnectionString = ConfigurationManager.ConnectionStrings["Savy_App.Properties.Settings.SavyPOS_DBConnectionString"].ToString();
-                    string select_statement = "SELECT [brandName]," +
-                                                "       [paymentId]," +
+                    string select_statement = "SELECT DISTINCT [brandName]," +
+                                                "       REPLICATE('0',6-LEN(RTRIM([paymentId]))) + RTRIM([paymentId]) AS paymentId," +
                                                 "       [productName]," +
                                                 "       [deliveredQty]," +
                                                 "       [discountedPrice]," +
@@ -155,8 +155,8 @@ namespace Savy_App
                                                 "       [CREATE_DATE]," +
                                                 "       [totalAmount]" +
                                                 "  FROM Sales" +
-                                               " WHERE [CREATE_DATE] >= '" + sDate + "'" +
-                                               " AND [CREATE_DATE] <= '" + eDate + "' ORDER BY [CREATE_DATE] DESC, [brandName] ASC, [productName] ASC";
+                                               " WHERE CONVERT(DATE,[CREATE_DATE]) >= '" + sDate + "'" +
+                                               " AND CONVERT(DATE,[CREATE_DATE]) <= '" + eDate + "' ORDER BY [CREATE_DATE] DESC, [brandName] ASC, [productName] ASC";
 
                     DataSet ds = new DataSet();
                     SqlDataAdapter adp = new SqlDataAdapter(select_statement, Record.con);

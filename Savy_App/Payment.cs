@@ -285,7 +285,7 @@ namespace Savy_App
                                     "N'₱ '+ CONVERT(VARCHAR,[amountPaid]) AS amountPaid, " +
                                     "N'₱ '+ CONVERT(VARCHAR,[change]) AS change, " +
                                     "[CREATE_DATE], " +
-                                    "[paymentId], " +
+                                    "REPLICATE('0',6-LEN(RTRIM([paymentId]))) + RTRIM([paymentId]) AS paymentId, " +
                                     "[transactionId] " +
                                     "FROM [SavyPOS_DB].[dbo].[Invoice] " +
                                     "WHERE transactionId = " + Convert.ToInt32(txt_Id.Text); 
